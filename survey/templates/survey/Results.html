@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Resultaat
+{% endblock %}
+
+{% block content %}
+<p>
+    Uw betaling in module 1: {{ p1 }} ECUs<br>
+    Uw betaling in module 2: {{ p2 }} ECUs<br>
+    Uw betaling in module 3: {{ p3 }}
+</p>
+<p>U wordt over vijf seconden doorgestuurd naar een andere webpagina.</p>
+
+<meta http-equiv="refresh" content={{ player.link }}>
+
+{% endblock %}
+
+
+
+

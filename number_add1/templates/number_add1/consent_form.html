@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Survey Consent Formulier
+{% endblock %}
+
+{% block content %}
+<p>
+    Ti stiamo invitando a partecipare ad uno studio, titolato OE_0026, sulle politiche di governo. Questo studio e’ guidato da Prof. Raymond Duch, direttore del Centre for Experimental Social Sciences (CESS - Centro per le Scienze Sociali Sperimentali) dell’ Universita’ di Oxford, collegio Nuffield.
+</p>
+<p>
+    L’obiettivo dello studio e’ di aiutare a comprendere come le politiche di governo funzionano in Italia, e durera’ circa 10 minuti. La tua partecipazione in questo studio e’ interamente volontaria, e potrai ritirare il tuo consenso ed uscire dallo studio in qualsiasi momento. Se decidi di non partecipare nello studio, o se ritirerai il tuo consenso, non sarai penalizzato/a. Non sarai forzato/a a rispondere a domande cui preferiresti non dare risposta
+</p>
+<p>
+    Alla fine del sondaggio, ti verra’ comunicato quanto hai guadagnato attraverso lo studio. Durante lo studio accumulerai una moneta chiamata ECU, che verra’ scambiata in Euro al cambio di 1000 ECU = 1 Euro. Per via del regolamento interno a CESS e all’Universita’ di Oxford, dovremo chiederti di fornirci il tuo nome, indirizzo, codice fiscale, e la tua firma, per poter essere pagato/a.
+</p>
+<p>
+    Non si ritiene che ci siano alcuni rischi associati a questo studio; tuttavia, come per ogni attaivita’ online, c’e’ il rischio di essere hackerati. Per quanto possibile, la tua partecipazione a questo studio rimarrà confidenziale e verranno pubblicati solo dati anonimi. Faremo del nostro meglio per mantenere riservate le tue informazioni. Tutti i dati sono memorizzati in un formato elettronico protetto da password. Per proteggere la tua riservatezza, i sondaggi non conterranno informazioni che ti identificheranno personalmente. I risultati di questo studio saranno utilizzati a scopi accademici.
+</p>
+<p>
+In caso di domande sullo studio di ricerca, contattaci sul nostro indirizzo email: cess-online@nuffield.ox.ac.uk. Puoi andare su https://www.youtube.com/watch?v=nkPA3fb6K84&feature=youtu.be per guardare il nostro video sul trattamento etico dei nostri studi. Questa ricerca è stata approvata secondo le procedure CESS IRB per la ricerca su soggetti umani.
+</p>
+<p>
+    Ho letto le informazioni sopra. Firmando di seguito e restituendo questo modulo, acconsento a partecipare a questo studio.
+</p>
+{% formfields %}
+<br>
+{% next_button %}
+
+{% endblock%}

@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+
+{% block content %}
+
+
+    {% formfield player.cows_found with label=" Quante mucche hai trovato nell’Immagine?  Guadagnerai 100 ECU per ogni mucca trovata." %}
+
+    <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Submit">
+
+{% endblock %}
+

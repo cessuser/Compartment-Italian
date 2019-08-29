@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Modulo 1: RET
+{% endblock %}
+
+{% block content %}
+<p>
+    In questo modulo, ti verra’ chiesto di sommare una serie di numeri. Il tuo reddito guadagnato dipende da quante risposte corrette fornisci. Riceverai 100 ECU per ogni risposta corretta.
+</p>
+ <div class="next-btn" style="text-align:right;">{% next_button %}</div>
+
+{% endblock%}

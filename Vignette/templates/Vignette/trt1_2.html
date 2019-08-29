@@ -1,0 +1,136 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+
+{% block content %}
+
+<div class="col-12 mb-3">
+    <div class="card card-body bg-light">
+        {% if player.cur_trt == 1 %}
+            Il governo, composto dai partiti Alpha, Beta e Gamma, dichiara un obiettivo principale per il proprio mandato, che è quello di promuovere la crescita e creare posti di lavoro. I tre partiti firmano un contratto di governo, indicando politiche fiscali e di spesa su cui tutti i partiti della coalizione concordano. Queste misure del governo  per la promozione della crescita e creazione di posti di lavoro vengono quindi annunciate al pubblico dal Primo Ministro del partito Alpha.
+        {% elif player.cur_trt == 2 %}
+            Il ministro delle finanze del partito Beta dichiara un obiettivo principale per il proprio mandato, che e’ quello di promuovere la crescita e creare posti di lavoro. Il ministro delle finanze elabora politiche fiscali e di spesa da attuare. Queste politiche del governo per la promozione della crescita e creazione di posti di lavoro vengono quindi annunciate al pubblico dal Primo Ministro del partito Alpha.
+        {% elif player.cur_trt == 3 %}
+            Il governo, composto dai partiti Alpha, Beta e Gamma, dichiara un obiettivo principale per il proprio mandato, che è quello di promuovere la crescita e creare posti di lavoro. I tre partiti firmano un contratto di governo, indicando politiche fiscali e di spesa su cui tutti i partiti della coalizione concordano. Queste misure del governo  per la promozione della crescita e creazione di posti di lavoro vengono quindi annunciate al pubblico dal Ministro delle finanze del Partito Beta.
+        {% elif player.cur_trt == 4 %}
+            Il ministro delle finanze del partito Beta dichiara un obiettivo principale per il proprio mandato, che e’ quello di promuovere la crescita e creare posti di lavoro. Il ministro delle finanze elabora politiche fiscali e di spesa da attuare. Queste politiche del governo per la promozione della crescita e creazione di posti di lavoro vengono quindi annunciate al pubblico dal Ministro delle finanze del Partito Beta.
+        {% elif player.cur_trt == 5 %}
+            Il governo, composto dai partiti Alpha, Beta e Gamma, dichiara un obiettivo principale per il proprio mandato, che è quello di promuovere la crescita e creare posti di lavoro. I tre partiti firmano un contratto di governo, indicando politiche fiscali e di spesa su cui tutti i partiti della coalizione concordano. Queste misure del governo  per la promozione della crescita e creazione di posti di lavoro vengono quindi annunciate al pubblico dal Primo Ministro del partito Alpha.
+        {% elif player.cur_trt == 6 %}
+            Il ministro delle finanze del partito Beta dichiara un obiettivo principale per il proprio mandato, che e’ quello di promuovere la crescita e creare posti di lavoro. Il ministro delle finanze elabora politiche fiscali e di spesa da attuare. Queste politiche del governo per la promozione della crescita e creazione di posti di lavoro vengono quindi annunciate al pubblico dal Primo Ministro del partito Alpha.
+        {% elif player.cur_trt == 7 %}
+            Il governo, composto dai partiti Alpha, Beta e Gamma, dichiara un obiettivo principale per il proprio mandato, che è quello di promuovere la crescita e creare posti di lavoro. I tre partiti firmano un contratto di governo, indicando politiche fiscali e di spesa su cui tutti i partiti della coalizione concordano. Queste misure del governo  per la promozione della crescita e creazione di posti di lavoro vengono quindi annunciate al pubblico dal Ministro delle finanze del Partito Beta.
+        {% else %}
+            Il ministro delle finanze del partito Beta dichiara un obiettivo principale per il proprio mandato, che e’ quello di promuovere la crescita e creare posti di lavoro. Il ministro delle finanze elabora politiche fiscali e di spesa da attuare. Queste politiche del governo per la promozione della crescita e creazione di posti di lavoro vengono quindi annunciate al pubblico dal Ministro delle finanze del Partito Beta.
+        {% endif %}
+    </div>
+</div>
+    <div class="col-12 mb-3">
+        {% if player.cur_trt < 5 %}
+            Siamo interessati a come gli elettori reagirebbero a questo governo quando l'economia performa al di sopra delle aspettative, quindi quando la crescita del PIL è molto più alta del normale e i tassi di disoccupazione scendono a livelli molto bassi.
+        {% else %}
+            Siamo interessati a come gli elettori reagiscono quando l'economia performa al di sotto delle aspettative: la crescita del PIL è molto più bassa del normale e i tassi di disoccupazione salgono a livelli molto alti.
+        {% endif %}
+    </div>
+<p>
+    {% if player.cur_trt < 5 %}
+        1. {{ form.q1.label }}
+    {% else %}
+        1.  Da elettore, come valuteresti il partito Alpha, il partito del Primo Ministro, se l’'economia performa al di sotto delle aspettative? A sinistra si indica "molto male", e a destra "molto bene”.
+    {% endif %}
+    <br>
+    <!--very bad &nbsp;<input name = "q1", type="range" id="slider"> &nbsp;very good-->
+<div class="slidecontainer">
+    molto male <input type="range" min="1" max="100" value="50" name="q1" class="slider" id="id_q1">  Molto bene
+    <br><br>
+<p align="center">Vaarde: <span id="q1_val"></span></p>
+</div>
+    <br>
+    {% if player.cur_trt < 5 %}
+        2. {{ form.q2.label }}
+    {% else %}
+        2.Come elettore come valuteresti il partito Beta, il partito del ministro delle finanze, per un'economia che ha prestazioni inferiori alle aspettative? A sinistra si indica "molto male" e a destra "molto bene".
+    {% endif %}
+<br><br>
+<div class="slidecontainer">
+    molto male <input type="range" min="1" max="100" value="50" name="q2" class="slider" id="id_q2">  molto bene
+    <br><br>
+<p align="center">Valore: <span id="q2_val"></span></p>
+</div>
+    {% if player.cur_trt < 5 %}
+        3. {{ form.q3.label }}
+    {% else %}
+        3. Come elettore come valuteresti il Partito Gamma, il Partito del Ministro degli Affari Esteri, per un'economia che va al di sotto delle aspettative? A sinistra si indica "molto male", e a destra "molto bene".
+    {% endif %}
+<br><br>
+<div class="slidecontainer">
+    molto male  <input type="range" min="1" max="100" value="50" name="q3" class="slider" id="id_q3">  Molto bene
+    <br><br>
+<p align="center">Valore: <span id="q3_val"></span></p>
+</div>
+<br>
+{% if player.cur_trt > 4 %}
+    {% formfield player.q4 label="4.Quale delle tre parti ritieni principalmente responsabile dei bassi tassi di crescita del PIL e dei livelli di disoccupazione più elevati?" %}
+{% else %}
+    {% formfield player.q4 %}
+{% endif %}
+</p>
+<br><br>
+
+<style>
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0084FF;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background:#0084FF;
+  cursor: pointer;
+}
+</style>
+<script>
+var slider1 = document.getElementById("id_q1");
+var output1 = document.getElementById("q1_val");
+output1.innerHTML = slider1.value;
+
+var slider2 = document.getElementById("id_q2");
+var output2 = document.getElementById("q2_val");
+output2.innerHTML = slider2.value;
+
+var slider3 = document.getElementById("id_q3");
+var output3 = document.getElementById("q3_val");
+output3.innerHTML = slider3.value;
+
+slider1.oninput = function() {
+  output1.innerHTML = this.value;
+}
+slider2.oninput = function() {
+  output2.innerHTML = this.value;
+}
+slider3.oninput = function() {
+  output3.innerHTML = this.value;
+}
+</script>
+{% next_button %}
+{% endblock %}
+

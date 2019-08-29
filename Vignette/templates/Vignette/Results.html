@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Risultato
+
+{% endblock %}
+
+{% block content %}
+<p>
+    Il tuo pagamento nel modulo 1: {{ p1 }} ECUs<br>
+    Il tuo pagamento nel modulo 2: {{ p2 }} ECUs<br>
+    Il tuo pagamento nel modulo 3: {{ player.payoff }}
+</p>
+{% endblock %}
+
+
