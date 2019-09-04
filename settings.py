@@ -11,43 +11,28 @@ SESSION_CONFIG_DEFAULTS = {
 }
 
 SESSION_CONFIGS = [
-    # {
-    #     'name': 'compartment_combined_UK_1000',
-    #     'display_name': "compartment_combined_UK_1000",
-    #     'num_demo_participants': 2,
-    #     'real_world_currency_per_point': 0.001,
-    #     'UK': True,
-    #     'Ireland':False,
-    #     'Currency': '£',
-    #     'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
-    # },
     {
-        'name': 'compartment_combined_Netherland_1000',
-        'display_name': "compartment_combined_Netherland_1000",
+        'name': 'compartment_combined_Italian_1000',
+        'display_name': "compartment_combined_Italian_1000",
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.001,
         'UK': False,
         'Ireland': False,
-        'Netherland':True,
+        'Netherland':False,
         'Currency': '€',
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
+    },
+    {
+        'name': 'Vignette',
+        'display_name': "Vignette",
+        'num_demo_participants': 2,
+        'real_world_currency_per_point': 0.001,
+        'UK': False,
+        'Ireland': False,
+        'Netherland':False,
+        'Currency': '€',
+        'app_sequence': ['Vignette'],
     }
-    # {
-    #     'name': 'compartment_negative',
-    #     'display_name': "compartment_negative",
-    #     'num_demo_participants': 1,
-    #     'treatment': 1,
-    #     'negative': True,
-    #     'app_sequence': ['number_add1', 'word_search', 'Vignette', 'survey'],
-    # },
-    # {
-    #     'name': 'Vignette',
-    #     'display_name': "Vignette",
-    #     'num_demo_participants': 2,
-    #     'treatment': 4,
-    #     'negative': True,
-    #     'app_sequence': ['Vignette'],
-    # },
 
 
 ]

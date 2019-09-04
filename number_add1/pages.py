@@ -14,7 +14,7 @@ class TaskPage(Page):
     form_fields = ['answer']
     form_model = models.Player
     timeout_seconds = 60
-    timer_text = 'Tijd om te voltooien:'
+    timer_text = 'Tempo per il completamento:'
 
     def is_displayed(self):
         if self.round_number == 1:
@@ -58,9 +58,9 @@ class Results(Page):
         self.player.n_correct = self.player.participant.vars['n_correct1_M5']
         msg = ''
         if self.player.participant.vars['n_correct1_M5'] == 1:
-            msg = 'U heeft 1 vraag juist beantwoord.'
+            msg = 'Hai risposto correttamente a 1 domanda.'
         else:
-            msg = 'U heeft ' + str(self.player.participant.vars['n_correct1_M5']) + ' vragen juist beantwoord.'
+            msg = 'Hai risposto correttamente a ' + str(self.player.participant.vars['n_correct1_M5']) + ' domande.'
         return{
             'msg': msg
         }

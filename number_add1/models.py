@@ -43,16 +43,13 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     consent = models.BooleanField(widget=widgets.RadioSelect,
-                                 label='Bent u het eens met de bovenstaande informatie?',
-                                 choices=[(True, 'Ja'), (False, 'Nee')])
+                                 label='Ho letto le informazioni sopra. Firmando di seguito e restituendo questo modulo, acconsento a partecipare a questo studio.',
+                                 choices=[(True, 'SI'), (False, 'NO')])
     label = models.StringField()
-    answer = models.IntegerField(label='Antwoord:') # player answer
+    answer = models.IntegerField(label='Risposta:') # player answer
     correct = models.IntegerField() # if correct
     n_correct = models.IntegerField() # number of correct
-    modelPred = models.IntegerField(choices=[(1, '1st place'), (2, '2nd place'), (3, 'Bottom')], widget=widgets.RadioSelect)
-    roundPred = models.IntegerField(choices=[1, 2, 3], widget=widgets.RadioSelect)
 
-    rank = models.IntegerField()
 
 
     def set_label(self):

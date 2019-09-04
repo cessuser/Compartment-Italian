@@ -42,11 +42,11 @@ class Player(BasePlayer):
     treatment_label = models.StringField()
 
 
-    q1 = models.IntegerField(label='Als kiezer, hoe zou u partij Alpha, van de Minister President, beoordelen, bij een economie die boven de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.')
-    q2 = models.IntegerField(label=' Als kiezer, hoe zou u partij Beta, van de Minister van Financiën, beoordelen, bij een economie die boven de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.')
-    q3 = models.IntegerField(label='Als kiezer, hoe zou u partij Gamma, van de Minister van Buitenlandse Zaken, beoordelen, bij een economie die boven de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.')
+    q1 = models.IntegerField(label='Da elettore, come valuteresti il partito Alpha, il partito del Primo Ministro, se l"economia performa al di sotto delle aspettative? A sinistra si indica "molto male", e a destra "molto bene”.')
+    q2 = models.IntegerField(label='Come elettore come valuteresti il partito Beta, il partito del ministro delle finanze, per un\'economia che ha prestazioni inferiori alle aspettative? A sinistra si indica "molto male" e a destra "molto bene"')
+    q3 = models.IntegerField(label='Come elettore come valuteresti il Partito Gamma, il Partito del Ministro degli Affari Esteri, per un\'economia che va al di sotto delle aspettative? A sinistra si indica "molto male", e a destra "molto bene".')
     q4 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'], widget=widgets.RadioSelect,
-                            label='4.Welke van de drie partijen vindt u hoofdzakelijk verantwoordelijk voor de hoge BBP groei en het lagere werkloosheidsniveau?')
+                            label='4.Quale delle tre parti ritieni principalmente responsabile dei bassi tassi di crescita del PIL e dei livelli di disoccupazione più elevati?')
     a1 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'],
                             label='Tot welke partij behoort de Minister President? U verdient 100 ECUs voor het correcte antwoord.', widget=widgets.RadioSelect)
     a2 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'],

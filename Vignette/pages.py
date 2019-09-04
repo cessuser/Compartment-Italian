@@ -24,6 +24,10 @@ class trt1_2(Page):
     form_model = models.Player
     form_fields = ['q1', 'q2', 'q3', 'q4']
 
+    def vars_for_template(self):
+        return{
+            'cur_trt': self.player.cur_trt
+        }
 
 class trt1_3(Page):
     def before_next_page(self):
@@ -31,11 +35,11 @@ class trt1_3(Page):
 
     def dice_error_message(self, value):
         if value > 6 or value < 1:
-            return 'Invalid value! To continue, please roll the dice again, and enter a value between 1 and 6! '
+            return 'Valore non valido! Per continuare, tira di nuovo i dadi e inserisci un valore tra 1 e 6!'
 
     def real_dice_error_message(self,value):
         if value == '':
-            return "Please make sure your dice is rolled."
+            return "Assicurati che i tuoi dadi vengano lanciati."
 
 class additionals(Page):
     form_fields = ['a1', 'a2', 'a3']
@@ -59,7 +63,7 @@ class trt1_3_1(Page):
 
     def dice_error_message(self, value):
         if value > 6 or value < 1:
-            return 'Invalid value! Please enter a value between 1 and 6! '
+            return 'Valore non valido! Inserisci un valore compreso tra 1 e 6! '
 
 
 page_sequence = [
