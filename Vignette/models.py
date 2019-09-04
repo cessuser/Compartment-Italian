@@ -45,20 +45,20 @@ class Player(BasePlayer):
     q1 = models.IntegerField(label='Da elettore, come valuteresti il partito Alpha, il partito del Primo Ministro, se l"economia performa al di sotto delle aspettative? A sinistra si indica "molto male", e a destra "molto bene”.')
     q2 = models.IntegerField(label='Come elettore come valuteresti il partito Beta, il partito del ministro delle finanze, per un\'economia che ha prestazioni inferiori alle aspettative? A sinistra si indica "molto male" e a destra "molto bene"')
     q3 = models.IntegerField(label='Come elettore come valuteresti il Partito Gamma, il Partito del Ministro degli Affari Esteri, per un\'economia che va al di sotto delle aspettative? A sinistra si indica "molto male", e a destra "molto bene".')
-    q4 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'], widget=widgets.RadioSelect,
+    q4 = models.StringField(choices=['Partito Alpha', 'Partito Beta', 'Partito Gamma'], widget=widgets.RadioSelect,
                             label='4.Quale delle tre parti ritieni principalmente responsabile dei bassi tassi di crescita del PIL e dei livelli di disoccupazione più elevati?')
-    a1 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'],
+    a1 = models.StringField(choices=['Partito Alpha', 'Partito Beta', 'Partito Gamma'],
                             label='Tot welke partij behoort de Minister President? U verdient 100 ECUs voor het correcte antwoord.', widget=widgets.RadioSelect)
-    a2 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'],
+    a2 = models.StringField(choices=['Partito Alpha', 'Partito Beta', 'Partito Gamma'],
                             label='Tot welke partij behoort de Minister van Financiën? U verdient 100 ECUs voor het correcte antwoord. ', widget=widgets.RadioSelect)
-    a3 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'],
+    a3 = models.StringField(choices=['Partito Alpha', 'Partito Beta', 'Partito Gamma'],
                             label='Tot welke partij behoort de Minister van Buitenlandse Zaken? U verdient 100 ECUs voor het correcte antwoord.', widget=widgets.RadioSelect)
 
     def set_payoff(self):
         self.payoff = Constants.dice_prize * sum(self.participant.vars['dice1'])
-        if self.a1 == 'Partij Alpha':
+        if self.a1 == 'Partito Alpha':
             self.payoff += 100
-        if self.a2 == 'Partij Beta':
+        if self.a2 == 'Partito Beta':
             self.payoff += 100
-        if self.a3 == 'Partij Gamma':
+        if self.a3 == 'Partito Gamma':
             self.payoff += 100
